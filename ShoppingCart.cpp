@@ -14,14 +14,14 @@ string GetDate() {
 }
 
 //Adding and Removing items from the vector
-void ShoppingCart::addItem(ItemToPurchase item, ) {
+void ShoppingCart::AddItem(ItemToPurchase item, ) {
   cartItems.push_back(item.GetName());
   cartItems[itemQuantity] = item;
   itemQuantity++;
   totalPrice += item.GetPrice();
 }
 
-void ShoppingCart::removeItem(ItemToPurchase item) {
+void ShoppingCart::RemoveItem(ItemToPurchase item) {
   bool found = false;
   while (int i = 0; i < cartItems.length && !found) {
     if (cartItems[i].GetName() == item.GetName()) {
