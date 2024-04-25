@@ -1,36 +1,36 @@
-#ifndef SHOPPING_CART_H
-#define SHOPPING_CART_H
+#ifndef ITEM_TO_PURCHASE_H
+#define ITEM_TO_PURCHASE_H
+
 
 #include <string>
-#include <vector>
 using namespace std;
 
-#include "ItemToPurchase.h"
-
-class ShoppingCart {
+class ItemToPurchase {
+   
    public:
-      ShoppingCart();
-      ShoppingCart(string name, string date);
+      ItemToPurchase();
+      ItemToPurchase(string name, string description, 
+                  int price, int quantity = 0);
       
-      string GetCustomerName() const;
-      string GetDate() const;
+      void SetName(string name);
+      void SetDescription(string description);
+      void SetPrice(int price);
+      void SetQuantity(int quantity);
       
-      void AddItem(ItemToPurchase item);
-      void RemoveItem(string name);
+      string GetName() const;
+      string GetDescription() const;
+      int GetPrice() const;
+      int GetQuantity() const;
       
-      void ModifyItem(ItemToPurchase item);
-      
-      int GetNumItemsInCart();
-      double GetCostOfCart();
-      
-      void PrintTotal();
-      void PrintDescriptions();
-      
+      void PrintItemCost();
+      void PrintItemDescription();
    
    private:
-      string customerName;
-      string currentDate;
-      vector<ItemToPurchase> cartItems;
+      string itemName;
+      string itemDescription;
+      int itemPrice;
+      int itemQuantity;
 };
+
 
 #endif
