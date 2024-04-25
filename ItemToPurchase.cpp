@@ -1,34 +1,62 @@
 #include "ItemToPurchase.h"
 #include <iostream>
+#include <string>
+
+using namespace std;
 
 ItemToPurchase::ItemToPurchase(string name, string description, int price, int quantity){
-  this->name = name;
-  this->description = description;
-  this->price = price;
-  this->quantity = quantity;
-}
-ItemToPurchase::ItemToPurchase(){
-name = "";
-description = "none";
-price = 0;
-quantity = 0; 
+  itemName = name;
+  itemDescription = description;
+  itemPrice = price;
+  itemQuantity = quantity;
 }
 
-//Setter Function
-void ItemToPurchase::SetDescription(string& description) {
-  this->description = description;
+ItemToPurchase::ItemToPurchase(){
+itemName = "none";
+itemDescription = "none";
+itemPrice = 0;
+itemQuantity = 0; 
 }
+
+//setters
+      void ItemToPurchase::SetName(string name){
+         itemName = name;
+      }
+      void ItemToPurchase::SetDescription(string description){
+         itemDescription = description;
+      }
+      void ItemToPurchase::SetPrice(int price){
+         itemPrice = price;
+      }
+      void ItemToPurchase::SetQuantity(int quantity){
+         itemQuantity = quantity;
+      }
+
+//getters
+      string ItemToPurchase::GetName() const {
+         return itemName;
+      }
+      string ItemToPurchase::GetDescription() const {
+         return itemDescription;
+      }
+      int ItemToPurchase::GetPrice() const {
+         return itemPrice;
+      }
+      int ItemToPurchase::GetQuantity() const {
+         return itemQuantity;
+      }
+
+
+
 
 //Print functions
 
 void ItemToPurchase::PrintItemCost(){
-cout << name << " " << quantity << " @ $" << price << " = $" << quantity * price << endl;
+cout << itemName << " " << itemQuantity << " @ $" << itemPrice << " = $" << itemQuantity*itemPrice << endl;
 }
 void ItemToPurchase::PrintItemDescription(){
-cout << name << ": " << description << endl;
+cout << itemName << ": " << itemDescription << endl;
 }
-
-
 
 
 
