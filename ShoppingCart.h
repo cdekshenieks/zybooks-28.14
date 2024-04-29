@@ -1,10 +1,3 @@
-#ifndef SHOPPING_CART_H
-#define SHOPPING_CART_H
-
-#include <string>
-#include <vector>
-using namespace std;
-
 #include "ItemToPurchase.h"
 
 class ShoppingCart {
