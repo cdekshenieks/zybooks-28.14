@@ -92,41 +92,44 @@ void ExecuteMenu(char choice, ShoppingCart& cart) {
 
 
 int main() {
-  string name;
-   string date;
+   string customerName;
+   string currentDate;
    char opt;
-
-   cout << "Enter customer's name:" << endl;
-   getline(cin, name);
-   cout << "Enter today's date:" << endl;
-   getline(cin, date);
-   cout<< endl;
    
-   cout << "Customer name: " << name << endl;
-   cout << "Today's date: " << date << endl << endl;
-    ShoppingCart cart(name, date);
+   cout << "Enter customer's name:" << endl;
+   getline(cin, customerName);
+   cout << "Enter today's date:" << endl;
+   getline(cin, currentDate);
+   cout << endl;
+   
+   ShoppingCart cart(customerName, currentDate);
+   
+   cout << "Customer name: " << cart.GetCustomerName() << endl;
+   cout << "Today's date: " << cart.GetDate() << endl;
+   cout << endl;
    
    PrintMenu();
    cout << endl;
    cout << "Choose an option:" << endl;
    cin >> opt;
+   
    do {
-      if (opt != 'a' && opt != 'd' && opt != 'c' && opt != 'i' && opt != 'o' && opt != 'q') { 
-         cout << "Choose an option:" << endl; 
-         cin >> opt; 
-         } 
-      else if (opt == 'q') { 
-         break;
-         } 
-      else { 
-         ExecuteMenu(opt, cart);
-         PrintMenu(); 
-         cout << endl; 
-         cout <<  "Choose an option:" << endl;
+      if (opt != 'a' && opt != 'd' && opt != 'c' && opt != 'i' && opt != 'o' && opt != 'q') {
+         cout << "Choose an option:" << endl;
          cin >> opt;
-         } 
-         } while (opt != 'q'); 
-         
-         return 0; 
-  
+      }
+      else if (opt =='q') {
+         break;
+      }
+      else {
+         ExecuteMenu(opt, cart);
+         PrintMenu();
+         cout << endl;
+         cout << "Choose an option:" << endl;
+         cin >> opt;
+      }
+   }
+   while (opt != 'q');
+   
+   return 0;
 }
