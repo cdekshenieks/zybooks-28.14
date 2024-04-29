@@ -4,6 +4,7 @@
 
 using namespace std;
 
+
 ItemToPurchase::ItemToPurchase(string name, string description, int price, int quantity){
   itemName = name;
   itemDescription = description;
